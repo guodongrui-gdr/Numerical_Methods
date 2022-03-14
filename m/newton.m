@@ -1,4 +1,4 @@
-function [p0,err,k,y]=newton(f,df,p0,delta,epsilon,max1,M)%M重根情况下的牛顿迭代法
+function [p0,err,k,y]=newton(f,df,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
 %输入参数:   f为原函数
 %           df为f的一阶导函数
 %           p0为初始值
