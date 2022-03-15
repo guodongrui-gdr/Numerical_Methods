@@ -1,4 +1,4 @@
-function c=bisect(f,a,b,max1)
+function c=bisect(f,a,b,max1)%二分法
 ya=feval(f,a);
 yb=feval(f,b);
 if ya*yb>0

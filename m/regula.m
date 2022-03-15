@@ -1,4 +1,4 @@
-function c=regula(f,a,b,max1)
+function c=regula(f,a,b,max1)%ÊÔÖµ·¨
 ya=feval(f,a);
 yb=feval(f,b);
 if ya*yb>0
