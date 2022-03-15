@@ -2,6 +2,7 @@ function c=bisect(f,a,b,max1)
 ya=feval(f,a);
 yb=feval(f,b);
 if ya*yb>0
+    disp("区间错误");
     return;
 end
 for k=1:max1
