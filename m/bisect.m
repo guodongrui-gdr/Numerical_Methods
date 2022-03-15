@@ -1,13 +1,13 @@
-function c=bisect(a,b,max1)
-ya=f1(a);
-yb=f1(b);
+function c=bisect(f,a,b,max1)
+ya=feval(f,a);
+yb=feval(f,b);
 if ya*yb>0
     return;
 end
 for k=1:max1
     
     c=(a+b)/2;
-    yc=f1(c);
+    yc=feval(f,c);
     if yc==0
         a=c;
         b=c;

@@ -1,13 +1,14 @@
-function c=regula(a,b,max1)
-ya=f1(a);
-yb=f1(b);
+function c=regula(f,a,b,max1)
+ya=feval(f,a);
+yb=feval(f,b);
 if ya*yb>0
+    disp("Çø¼ä´íÎó");
     return;
 end
 for k=1:max1
     dx=yb*(b-a)/(yb-ya);
     c=b-dx;
-    yc=f1(c);
+    yc=feval(f,c);
     if yc==0
        break;
     elseif yb*yc<0
