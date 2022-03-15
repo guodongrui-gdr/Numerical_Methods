@@ -1,4 +1,4 @@
-function [p,err,k,g]=newton(f,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
+function [p,err,k,y]=newton(f,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
 %输入参数:   f为原函数
 %           p0为初始值
 %           delta为p的最大允许误差
@@ -10,8 +10,8 @@ function [p,err,k,g]=newton(f,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
 %           k为迭代次数
 %           y为f(p)
 syms x;
-y=f(x);
-df=matlabFunction(diff(y,1));
+g=f(x);
+df=matlabFunction(diff(g,1));
 for k=1:max1
     if feval(df,p0)==0
         disp("error:f的一阶导数在p0处为0");
@@ -22,8 +22,8 @@ for k=1:max1
     relerr=2*err/(abs(p1)+delta);%相对误差
     p(k)=p1;
     p0=p1;
-    g(k)=feval(f,p0);
-    if(err(k)<delta)|(relerr<delta)|(abs(g(k))<epsilon)
+    y(k)=feval(f,p0);
+    if(err(k)<delta)|(relerr<delta)|(abs(y(k))<epsilon)
         break;
     end
 end
