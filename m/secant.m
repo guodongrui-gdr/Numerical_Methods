@@ -1,4 +1,4 @@
-function [p,err,k,y]=secant(f,p0,p1,delta,epsilon,max1)%割线法
+function [p,err,k,y]=secant(f,p0,p1,delta,epsilon,max1)% 割线法
 %输入参数:  f为输入函数
 %           p0,p1为两个初始点
 %           delta为p的最大允许误差
