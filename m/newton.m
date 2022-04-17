@@ -1,3 +1,4 @@
+% newton.m
 function [p,err,k,y]=newton(f,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
 %输入参数:   f为原函数
 %           p0为初始值
@@ -14,7 +15,7 @@ g=f(x);
 df=matlabFunction(diff(g,1));
 for k=1:max1
     if feval(df,p0)==0
-        disp("error:f的一阶导数在p0处为0");
+        disp(p0);
         break;
     end
     p1=p0-M*feval(f,p0)/feval(df,p0);
