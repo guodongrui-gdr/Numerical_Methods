@@ -1,7 +1,5 @@
 function [p,err,k,y]=halley(f,p0,delta,epsilon,max1)% 哈利法(牛顿-拉夫森的改进)
 %输入参数:   f为原函数
-%           df为f的一阶导函数
-%           d2f为f的二阶导函数
 %           p0为初始值
 %           delta为p的最大允许误差
 %           epsilon为函数值f(p)的最大允许误差
