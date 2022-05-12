@@ -28,3 +28,4 @@ for k=1:max1
         break;
     end
 end
+p=p';
