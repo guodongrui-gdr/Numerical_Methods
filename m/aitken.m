@@ -9,3 +9,4 @@ for k=1:length(P)-2
         break
     end
 end
+Q=Q';
