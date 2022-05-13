@@ -20,9 +20,9 @@ for k=1:max1
     elseif(b<0)
         z=(-2*c)/(b-sqrt(b^2-4*a*c));
     end
-    p(k)=p2+z;
-    x=find(max(abs(P-p(k))))
-    P(max(abs(P-p(k))))=[];
+    p(k)=P(3)+z;
+    [~,i]=max(abs(P-p(k)));
+    P(i)=[];
     P=[P p(k)];
     err(k)=abs(z);
     relerr(k)=err(k)/(abs(P(3))+delta);
