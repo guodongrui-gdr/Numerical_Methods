@@ -1,5 +1,5 @@
 % newton.m
-function [p,err,k,y]=newton(f,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
+function [p,k,err,y]=newton(f,p0,delta,epsilon,max1,M)% M重根情况下的牛顿迭代法
 %输入参数:   f为原函数
 %           p0为初始值
 %           delta为p的最大允许误差
