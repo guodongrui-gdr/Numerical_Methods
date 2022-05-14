@@ -3,7 +3,7 @@ function R=approot(f,a,b,epsilon)
 %           X为向量形式的自变量
 %           epsilon为最大误差
 % 输出参数: R为根的近似值位置
-X=a:10^(-3):b;
+X=a:10^(-6):b;
 Y=f(X);
 df=diff(f(X));
 n=length(X);
