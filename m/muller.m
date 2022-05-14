@@ -23,6 +23,8 @@ for k=1:max1
         z=(-2*c)/(b+sqrt(b^2-4*a*c));
     elseif(b<0)
         z=(-2*c)/(b-sqrt(b^2-4*a*c));
+    else
+        z=0;
     end
     if ~isreal(z)
         z=real(z);
