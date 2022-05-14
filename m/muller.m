@@ -1,4 +1,4 @@
-function [p,k,y]=muller(f,p0,p1,p2,delta,epsilon,max1)
+function [p,k,err,y]=muller(f,p0,p1,p2,delta,epsilon,max1)
 % 输入参数: f为原函数
 %           p0,p1,p2为初始点
 %           delta为p的最大允许误差
