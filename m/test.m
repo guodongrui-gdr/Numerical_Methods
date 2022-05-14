@@ -1,4 +1,5 @@
 function test(f,X,delta)
+% 输出迭代序列、迭代次数和图像
 syms x
 df=diff(f,x);
 epsilon=10^(-10);
@@ -31,30 +32,45 @@ if isempty(R)
         disp("区间内没有根")
     end
 end
+figure(2);
+subplot(2,1,1);
 fplot(f,[a,b])
 grid on
 hold on
 m=0;
 for i=1:length(R)
     if (limit(df,x,0,'left')~=limit(df,x,0,'right'))
-        [P,k]=muller(f,a,b,R(i),delta,epsilon,max2);
+        [P,k,err]=muller(f,a,b,R(i),delta,epsilon,max2);
         P
         k
     elseif abs(subs(df,x,R(i)))<epsilon
-        [P,k]=muller(f,a,b,R(i),delta,epsilon,max2);
+        [P,k,err]=muller(f,a,b,R(i),delta,epsilon,max2);
         P
         k
     else
-        [P,k]=newton(f,R(i),delta,epsilon,max2,1);
+        [P,k,err]=newton(f,R(i),delta,epsilon,max2,1);
         P
         k
     end
     for i=1:length(P)
-    c=num2str(i);
-    c=['p' c];
-    text(P(i),0,c,'fontsize',10)
-    scatter(P(i),0,6,"red")
+        c=num2str(i);
+        c=['p' c];
+        subplot(2,1,1);
+        hold on
+        text(P(i),0,c,'fontsize',10)
+        scatter(P(i),0,6,"red")
     end
+    i=1:length(err)
+    subplot(2,1,2)
+    grid on
+    hold on
+    plot(i,err,'r.')
+    for i=1:length(P)
+        c=num2str(i);
+        c=['p' c];
+        text(i,err(i),c,'fontsize',10)
+    end
+
 end
 
 
