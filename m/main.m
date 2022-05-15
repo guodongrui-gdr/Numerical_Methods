@@ -58,23 +58,23 @@ for i=1:length(R)
         P
         k
     end
-    for i=1:length(P)
-        c=num2str(i);
+    for j=1:length(P)
+        c=num2str(j);
         c=['p' c];
         subplot(2,1,1);
         hold on
-        text(P(i),0,c,'fontsize',10)
-        scatter(P(i),0,6,"red")
+        text(P(j),0,c,'fontsize',10)
+        scatter(P(j),0,6,"red")
     end
-    i=1:length(err);
+    j=1:length(err);
     subplot(2,1,2)
     grid on
     hold on
-    plot(i,err,'r.')
-    for i=1:length(P)
-        c=num2str(i);
+    plot(j,err,'r',Marker='.')
+    for j=1:length(P)
+        c=num2str(j);
         c=['p' c];
-        text(i,err(i),c,'fontsize',10)
+        text(j,err(j),c,'fontsize',10)
     end
 
 end
