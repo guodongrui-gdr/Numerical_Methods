@@ -5,13 +5,13 @@ err=1;
 J=0;
 R=zeros(4,4);
 R(1,1)=h*(feval(f,a)+feval(f,b))/2;
-while((err>tol)&(J<n))|(J<4)
+while((err>tol)&&(J<n))
     J=J+1;
     h=h/2;
     s=0;
     for p=1:M
         x=a+h*(2*p-1);
-        s=s+feval(f,x);
+        s=s+f(x);
     end
     R(J+1,1)=R(J,1)/2+h*s;
     M=2*M;
