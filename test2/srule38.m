@@ -1,0 +1,9 @@
+function Z = srule38(f,a0,b0,tol0) % 辛普森3/8公式
+h=(b0-a0)/3;
+C=zeros(1,3);
+C=feval(f,[a0 (a0+b0)/3 2*(a0+b0)/3 b0]);
+S=3*h*(C(1)+3*C(2)+3*C(3)+C(4))/8;
+S2=S;
+tol1=tol0;
+err=tol0;
+Z=[a0 b0 S S2 err tol1];
